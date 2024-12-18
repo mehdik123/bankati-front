@@ -1,9 +1,28 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
-
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter, withHashLocation } from '@angular/router';
 import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { KeycloakService } from 'keycloak-angular';
+import { APP_INITIALIZER } from '@angular/core';
+import { initializeKeycloak } from './keycloak-init';
+import { TokenInterceptor } from './token.interceptor';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration()]
+  providers: [
+    provideRouter(routes, withHashLocation()), // Ensures routes are available
+    provideHttpClient(),
+    KeycloakService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      deps: [KeycloakService],
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+  ],
 };

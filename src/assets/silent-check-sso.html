@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Silent SSO</title>
+</head>
+<body>
+<script>
+    // Notify Keycloak that the silent check has completed
+    parent.postMessage('keycloak-silent-check-sso', window.location.origin);
+</script>
+</body>
+</html>
