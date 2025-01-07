@@ -1,0 +1,18 @@
+<div>
+    <h2>Créer une carte virtuelle</h2>
+
+    <!-- Button to create a card -->
+    <button (click)="createCard()">Créer ma carte</button>
+
+    <!-- Display card details if card exists -->
+    <div *ngIf="card">
+        <p><strong>Numéro de Carte :</strong> {{ card?.numeroCarte }}</p>
+        <p><strong>Expiration :</strong> {{ card?.expiration }}</p>
+        <p><strong>Statut :</strong> {{ card?.statut }}</p>
+    </div>
+
+    <!-- Display error message if present -->
+    <div *ngIf="errorMessage" style="color: red;">
+        <p><strong>Erreur :</strong> {{ errorMessage }}</p>
+    </div>
+</div>

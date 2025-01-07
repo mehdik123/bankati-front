@@ -1,0 +1,51 @@
+/* Conteneur principal */
+.account-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.account-container h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.account-balance {
+  background-color: #fff8e1;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.account-balance h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.account-balance p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Bouton pour demander une carte virtuelle */
+.btn-virtual-card {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-virtual-card:hover {
+  background-color: #0056b3;
+}

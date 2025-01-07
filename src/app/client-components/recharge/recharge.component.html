@@ -1,0 +1,42 @@
+<div class="recharge-container">
+  <!-- Logo du fournisseur -->
+  <div class="provider-logo" *ngIf="logoUrl">
+    <img [src]="logoUrl" alt="Provider Logo" />
+  </div>
+
+  <!-- Titre de la recharge -->
+  <h2 class="recharge-title">Recharge {{ rechargeName }}</h2>
+
+  <!-- Champ pour le numéro de téléphone -->
+  <div class="form-group">
+    <label for="phoneNumber">Phone Number:</label>
+    <input
+      type="text"
+      id="phoneNumber"
+      [(ngModel)]="phoneNumber"
+      placeholder="Enter phone number"
+      required
+    />
+  </div>
+
+  <!-- Champ pour le montant -->
+  <div class="form-group">
+    <label for="amount">Amount (DH):</label>
+    <input
+      type="number"
+      id="amount"
+      [(ngModel)]="amount"
+      placeholder="Enter recharge amount"
+      required
+    />
+  </div>
+
+  <!-- Bouton pour confirmer la recharge -->
+  <button class="btn btn-primary" (click)="effectuerRecharge()">
+    Confirm Recharge
+  </button>
+
+  <div *ngIf="message" class="mt-3 text-center">
+    {{ message }}
+  </div>
+</div>

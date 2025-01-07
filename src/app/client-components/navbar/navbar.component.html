@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <!-- Section gauche avec le logo et le nom -->
+  <div class="navbar-left">
+    <img src="/assets/OIP.png" alt="Logo" class="navbar-logo" />
+    <span class="app-name">Bankati</span>
+  </div>
+
+  <!-- Section droite avec les boutons et le profil -->
+  <div class="navbar-right">
+    <button class="nav-btn">Nos Services</button>
+    <button class="nav-btn">À propos</button>
+    <img
+      src="/assets/profile.png"
+      alt="Profile"
+      class="profile-icon"
+      (click)="toggleProfileMenu()"
+    />
+    <div class="profile-menu" *ngIf="showProfileMenu">
+      <p><strong>Nom :</strong> {{ clientName }}</p>
+      <p><strong>Email :</strong> {{ clientEmail }}</p>
+    </div>
+  </div>
+</nav>

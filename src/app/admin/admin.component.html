@@ -1,1 +1,40 @@
-<h1>hhhhhhhhhhhhhhh admin</h1>
+<div class="container mt-5">
+    <h2>Tableau de Bord Administrateur</h2>
+    <button class="btn btn-primary mb-3" routerLink="/create-agent">Créer un agent</button>
+ 
+    <h3>Liste des Agents</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bourgeois</td>
+                <td>Alex</td>
+                <td>alex.bourgeois@example.com</td>
+                <td>+212 700 000 000</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Modifier</button>
+                    <button class="btn btn-danger btn-sm">Supprimer</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Rousseau</td>
+                <td>Elise</td>
+                <td>elise.rousseau@example.com</td>
+                <td>+212 700 111 111</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Modifier</button>
+                    <button class="btn btn-danger btn-sm">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+ </div>
+ 

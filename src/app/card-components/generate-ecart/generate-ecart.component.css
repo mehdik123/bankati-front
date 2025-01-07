@@ -1,0 +1,39 @@
+.background-container {
+  background: url('../../../assets/images/bank.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.ecart-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+}
+
+.logo {
+  color: #e3ba3a;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+.slogan {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.btn-gold {
+  background-color: #e3ba3a;
+  border: none;
+  color: white;
+  padding: 0.7rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-gold:hover {
+  background-color: #d1a326;
+}

@@ -1,0 +1,59 @@
+<div class="home">
+  <!-- Message de bienvenue -->
+  <h1>Bienvenue sur Bankati, {{ clientName }} !</h1>
+  <p>Nous sommes heureux de vous retrouver. Voici un aperçu de vos informations :</p>
+
+  <!-- Résumé des informations -->
+  <div class="summary">
+    <div class="summary-item">
+      <h3>Solde Actuel</h3>
+      <p>{{ clientBalance }} MAD</p>
+    </div>
+    <div class="summary-item">
+      <h3>Derniers Virements</h3>
+      <ul>
+        <li *ngFor="let transfer of recentTransfers">
+          À : {{ transfer.recipient }} - {{ transfer.amount }} MAD
+        </li>
+      </ul>
+    </div>
+    <div class="summary-item">
+      <h3>Recharges Récentes</h3>
+      <ul>
+        <li *ngFor="let recharge of recentRecharges">
+          {{ recharge.type }} : {{ recharge.amount }} MAD
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Accès rapide -->
+  <div class="quick-access">
+    <h2>Accès Rapide</h2>
+    <div class="card-container">
+      <div class="card">
+        <i class="fa fa-exchange"></i>
+        <h4>Virements</h4>
+        <button routerLink="/app-client/transfer">Accéder</button>
+      </div>
+      <div class="card">
+        <i class="fa fa-wallet"></i>
+        <h4>Paiement de Factures</h4>
+        <button routerLink="/app-client/Creditors">Accéder</button>
+      </div>
+      <div class="card">
+        <i class="fa fa-credit-card"></i>
+        <h4>Cartes Virtuelles</h4>
+        <button routerLink="/app-client/generate-ecart">Accéder</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notifications -->
+  <div class="notifications">
+    <h2>Notifications</h2>
+    <ul>
+      <li *ngFor="let notification of notifications">{{ notification }}</li>
+    </ul>
+  </div>
+</div>

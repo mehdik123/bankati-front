@@ -1,0 +1,74 @@
+/* Conteneur principal de la Navbar */
+.navbar {
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3c321a; /* Couleur de fond */
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Section gauche (logo et nom de l'application) */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Style du logo */
+.navbar-logo {
+  width: 40px; /* Taille du logo */
+  height: 40px;
+  margin-right: 10px; /* Espace entre le logo et le nom */
+}
+
+/* Style du texte "Bankati" */
+.app-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Section droite (boutons et profil) */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacement entre les éléments */
+  position: relative;
+}
+
+/* Boutons Nos Services et À propos */
+.nav-btn {
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: white;
+color: #d89e17;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Icône de profil */
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Menu déroulant pour le profil */
+.profile-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

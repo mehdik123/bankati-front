@@ -1,0 +1,76 @@
+<div class="container">
+  <h2 class="title">Paiement de facture ou Recharge</h2>
+
+  <!-- Conteneur des boutons pour basculer entre les sections -->
+  <div class="toggle-buttons">
+    <button
+      class="btn btn-primary"
+      [class.active]="viewMode === 'creditors'"
+      (click)="viewMode = 'creditors'"
+    >
+      Afficher les Créanciers
+    </button>
+    <button
+      class="btn btn-secondary"
+      [class.active]="viewMode === 'history'"
+      (click)="viewMode = 'history'"
+    >
+      Afficher l'Historique
+    </button>
+  </div>
+
+  <!-- Section des créanciers -->
+  <div *ngIf="viewMode === 'creditors'">
+    <!-- Grille des créanciers (2 par ligne) -->
+    <div class="creditors-grid">
+      <div class="creditor-card" *ngFor="let creditor of creditors">
+        <div class="creditor-content">
+          <!-- Logo/photo -->
+          <img [src]="creditor.logoUrl" alt="{{ creditor.name }}" class="creditor-logo" />
+
+          <!-- Informations -->
+          <div class="creditor-details">
+            <h5>{{ creditor.name }}</h5>
+            <p class="category">{{ creditor.category }}</p>
+
+            <!-- Liste des factures -->
+            <ul *ngIf="creditor.type === 'facture'" class="factures-list">
+              <li *ngFor="let facture of creditor.factures">
+                <a
+                  [routerLink]="'/app-client/payment/' + creditor.id"
+                  [queryParams]="{ logo: creditor.logoUrl, factureName: facture }"
+                  class="facture-link"
+                >
+                  {{ facture }}
+                </a>
+              </li>
+            </ul>
+
+            <!-- Liste des recharges -->
+            <ul *ngIf="creditor.type === 'recharge'" class="recharges-list">
+              <li *ngFor="let recharge of creditor.recharges">
+                <a
+                  [routerLink]="'/app-client/recharge/' + creditor.id"
+                  [queryParams]="{ logo: creditor.logoUrl, rechargeName: recharge }"
+                  class="recharge-link"
+                >
+                  {{ recharge }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section de l'historique -->
+  <div *ngIf="viewMode === 'history'" class="history-section">
+    <h3>Historique des Transactions</h3>
+    <ul>
+      <li *ngFor="let transaction of history">
+        {{ transaction.date }} - {{ transaction.amount }} DH - {{ transaction.type }}
+      </li>
+    </ul>
+  </div>
+</div>

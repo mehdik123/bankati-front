@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banque Digitale</title>
+  <link rel="stylesheet" href="home-page.component.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+  <div class="logo">Banque<span>Digitale</span></div>
+  <nav>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">À Propos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <button class="btn login-btn" (click)="onLogin()">Se connecter</button>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="animated-title">
+      Bienvenue dans le <span>futur</span> de la banque
+    </h1>
+    <p>Gérez vos finances de manière simple, rapide et sécurisée.</p>
+    <div class="hero-buttons">
+      <button class="btn primary-btn">Explorer</button>
+      <button class="btn secondary-btn">Ouvrir un compte</button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Nos Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <span class="material-icons">account_balance</span>
+        <h3>Comptes Bancaires</h3>
+        <p>Ouvrez un compte bancaire en quelques clics.</p>
+      </div>
+      <div class="card">
+        <span class="material-icons">credit_card</span>
+        <h3>Cartes de Crédit</h3>
+        <p>Gérez vos paiements en toute sécurité.</p>
+      </div>
+      <div class="card">
+        <span class="material-icons">savings</span>
+        <h3>Épargne</h3>
+        <p>Faites fructifier vos économies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>À Propos de Nous</h2>
+    <p>
+      Banque Digitale est votre partenaire financier moderne. Nous combinons innovation et simplicité pour vous offrir les meilleures solutions bancaires, adaptées à votre style de vie.
+    </p>
+    <img src="about-image.png" alt="À propos de Banque Digitale">
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contactez-Nous</h2>
+    <form>
+      <input type="text" placeholder="Votre Nom" required>
+      <input type="email" placeholder="Votre Email" required>
+      <textarea placeholder="Votre Message" rows="4" required></textarea>
+      <button type="submit" class="btn primary-btn">Envoyer</button>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Banque Digitale. Tous droits réservés.</p>
+    <div class="social-links">
+      <a href="#"><span class="material-icons">facebook</span></a>
+      <a href="#"><span class="material-icons">twitter</span></a>
+      <a href="#"><span class="material-icons">linkedin</span></a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

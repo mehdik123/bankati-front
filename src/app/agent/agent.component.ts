@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { KeycloakService } from '../keycloak.service';
 import { Router } from '@angular/router';
-import {FormsModule} from "@angular/forms";
-import {CommonModule} from "@angular/common";
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -36,21 +35,21 @@ import {CommonModule} from "@angular/common";
 export class AgentComponent {
   username = '';
   password = '';
-  role = 'agent';
+  role = 'agent'; // Default role is agent
   error = '';
 
-  constructor(private keycloakService: KeycloakService, private router: Router) {}
+  constructor(private router: Router) {}
 
   login() {
-    this.keycloakService
-        .login(this.username, this.password)
-        .then(() => {
-          alert(`${this.role} Login Successful`);
-          this.router.navigate([`/${this.role}`]); // Redirect to role-specific route
-        })
-        .catch((err) => {
-          this.error = 'Invalid credentials. Please try again.';
-          console.error(err);
-        });
+    // Static validation for demo purposes
+    if (this.role === 'agent' && this.username === 'agent' && this.password === 'agent123') {
+      alert('Agent Login Successful');
+      this.router.navigate(['/agent-dashboard']); // Redirect to agent dashboard
+    } else if (this.role === 'client' && this.username === 'client' && this.password === 'client123') {
+      alert('Client Login Successful');
+      this.router.navigate(['/client-dashboard']); // Redirect to client dashboard
+    } else {
+      this.error = 'Invalid credentials. Please try again.';
+    }
   }
 }

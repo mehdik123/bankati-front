@@ -1,0 +1,17 @@
+<div class="background-container">
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="ecart-card shadow-lg p-4">
+      <div class="text-center mb-4">
+        <h1 class="logo text-gold fw-bold">Generate E-Cart</h1>
+        <p class="slogan text-muted">Your seamless e-banking solution</p>
+      </div>
+      <button
+        class="btn btn-gold fw-bold w-100"
+        (click)="requestVirtualCard()"
+        [disabled]="isLoading"
+      >
+        {{ isLoading ? 'Creating...' : 'Request Virtual Card' }}
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="container">
+  <h2 class="title">Paiement de Facture</h2>
+
+  <!-- Affichage du logo et du nom de la facture -->
+  <div class="creditor-info" *ngIf="logoUrl && factureName">
+    <img [src]="logoUrl" alt="Logo du créancier" class="creditor-logo" />
+    <h4>{{ factureName }}</h4>
+  </div>
+
+  <!-- Message de feedback -->
+  <div
+    *ngIf="message"
+    [style.color]="messageType === 'success' ? 'green' : 'red'"
+    [style.border]="messageType === 'success' ? '1px solid green' : '1px solid red'"
+    [style.padding]="'10px'"
+    [style.margin]="'10px 0'"
+    [style.borderRadius]="'5px'"
+  >
+    {{ message }}
+  </div>
+
+  <div class="payment-card">
+    <form>
+      <!-- Champ pour entrer l'ID de la facture -->
+      <div class="form-group">
+        <label for="facture-id">ID de la Facture</label>
+        <input
+          type="text"
+          id="facture-id"
+          class="form-control"
+          placeholder="Entrez l'ID de la facture"
+          [(ngModel)]="factureId"
+          name="factureId"
+        />
+      </div>
+
+      <!-- Boutons de paiement -->
+      <div class="button-group">
+        <button type="button" class="btn btn-primary" (click)="payer()">Payer</button>
+        <button type="button" class="btn btn-secondary" (click)="payerParCarte()">Payer par Carte</button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="message" class="mt-3 text-center">
+    {{ message }}
+  </div>
+</div>

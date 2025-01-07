@@ -1,0 +1,64 @@
+.background-container {
+  background: no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.otp-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-gold {
+  color: #e3ba3a;
+}
+
+.otp-input-container {
+  margin: 1rem 0;
+}
+
+.otp-input {
+  width: 100px;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.otp-input:focus {
+  border-color: #e3ba3a;
+  outline: none;
+}
+
+.btn-gold {
+  background-color: #e3ba3a;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-gold:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-gold:hover:not(:disabled) {
+  background-color: #d1a326;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}

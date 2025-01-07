@@ -1,1 +1,40 @@
-<p>login works!</p>
+<div class="background-container d-flex justify-content-center align-items-center">
+  <div class="ecart-card">
+    <div class="text-center mb-4">
+      <h1 class="logo">Bankati</h1>
+      <p class="slogan">Your e-banking solution anytime, anywhere</p>
+    </div>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="mb-3">
+        <label for="username" class="form-label fw-bold">Username</label>
+        <input
+          type="text"
+          id="username"
+          [(ngModel)]="username"
+          name="username"
+          class="form-control"
+          placeholder="Enter your username"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label fw-bold">Password</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          class="form-control"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
+      <div *ngIf="error" class="text-danger mb-3 text-center">{{ error }}</div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-gold fw-bold" [disabled]="loading || !loginForm.valid">
+          {{ loading ? 'Logging in...' : 'Login' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

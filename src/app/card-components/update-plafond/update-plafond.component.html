@@ -1,0 +1,28 @@
+<div>
+    <h2>Update Plafond</h2>
+
+    <!-- Input for plafond -->
+    <label for="plafond">New Plafond (DH):</label>
+    <input
+        type="number"
+        [(ngModel)]="plafond"
+        id="plafond"
+        placeholder="Enter new plafond"
+        [disabled]="isLoading"
+    />
+
+    <!-- Button to update plafond -->
+    <button (click)="updatePlafond()" [disabled]="isLoading || plafond === null || plafond <= 0">
+        {{ isLoading ? 'Updating...' : 'Update Plafond' }}
+    </button>
+
+    <!-- Loading indicator -->
+    <div *ngIf="isLoading">
+        <p>Updating plafond, please wait...</p>
+    </div>
+
+    <!-- Success or error message -->
+    <div *ngIf="message" [style.color]="message.includes('succès') ? 'green' : 'red'">
+        <p>{{ message }}</p>
+    </div>
+</div>

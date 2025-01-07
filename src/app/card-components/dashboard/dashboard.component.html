@@ -1,0 +1,52 @@
+<div class="dashboard-container">
+  <!-- Virtual Card Design -->
+  <div class="virtual-card">
+    <div class="card-top">
+      <h2>Bankati</h2>
+      <p>Virtual E-Card</p>
+    </div>
+    <div class="card-middle">
+      <p class="card-number">{{ card?.numeroCarte || '**** **** **** ****' }}</p>
+      <p class="expiration">
+        <span><strong>Exp:</strong> {{ card?.expiration || 'MM/YY' }}</span>
+      </p>
+    </div>
+    <div class="card-bottom">
+      <p class="status">
+        <strong>Status:</strong> {{ card?.statut || 'Inactive' }}
+      </p>
+      <p class="plafond">
+        <strong>Plafond:</strong> {{ card?.plafond || 0 }} DH
+      </p>
+    </div>
+  </div>
+
+  <!-- Actions Section -->
+  <div class="actions-container">
+    <button class="action-button" (click)="openPlafondModal()">Update Plafond</button>
+    <button class="action-button" (click)="goToPage('recharge')">Recharge</button>
+    <button class="action-button" (click)="goToPage('facture')">Pay Facture</button>
+    <button class="action-button" (click)="goToPage('donation')">Make Donation</button>
+  </div>
+
+  <!-- Modal for Updating Plafond -->
+  <div *ngIf="isPlafondModalOpen" class="modal-overlay">
+    <div class="modal-content">
+      <h3>Update Plafond</h3>
+      <label for="plafond">New Plafond (DH):</label>
+      <input
+        type="number"
+        id="plafond"
+        [(ngModel)]="newPlafond"
+        placeholder="Enter new plafond"
+      />
+      <div class="modal-actions">
+        <button class="save-button" (click)="updatePlafond()">Save</button>
+        <button class="cancel-button" (click)="closePlafondModal()">Cancel</button>
+      </div>
+      <div *ngIf="plafondMessage" [style.color]="plafondMessageColor">
+        <p>{{ plafondMessage }}</p>
+      </div>
+    </div>
+  </div>
+</div>
